@@ -1,10 +1,7 @@
-input.onButtonPressed(Button.A, function () {
-    basic.showString("Hello,")
-})
-input.onButtonPressed(Button.B, function () {
-    basic.showString("World!")
-})
-basic.showString("A or B")
+music.setVolume(150)
 basic.forever(function () {
-	
+    serial.writeNumber(pins.analogReadPin(AnalogReadWritePin.P2))
+    serial.writeLine("")
+    basic.pause(100)
+    music.ringTone(pins.analogReadPin(AnalogReadWritePin.P2))
 })
